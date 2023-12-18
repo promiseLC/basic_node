@@ -26,19 +26,16 @@ spawnProcess.stdout.on('data', (data) => {
 
 const spawnProcessAddAndCommit = () => {
   
-  const add = spawn('git', ['add', '.'])
+  const add = spawnSync('git', ['add', '.'])
   
-  add.stdout.on('data', (data) => {
-  console.log('add',data);
-  })
 
-  spawn('git', ['commit', '-m', '脚本提交1'])
+  spawnSync('git', ['commit', '-m', '脚本提交2'])
   
-  // const log = spawn('git', ['log']) 
+  const log = spawn('git', ['log']) 
   
-  // log.stdout.on('data', (data) => {
-  //   console.log(data.toString());
-  // })
+  log.stdout.on('data', (data) => {
+    console.log(data.toString());
+  })
 
 }
 
