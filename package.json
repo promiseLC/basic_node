@@ -6,15 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "node ./debug.js",
-    "start": "node ./1.node_basic.js"
+    "start": "node ./1.node_basic.js",
+    "githooks": "node ./hooks/git-hooks.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "express": "^4.18.2"
-  },
-  "scripts": {
-    "githooks": "node ./gitHooks.js"
   }
 }
