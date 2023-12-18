@@ -28,7 +28,6 @@ const spawnProcessAddAndCommit = () => {
   
   const add = spawnSync('git', ['add', '.'])
   
-
   spawnSync('git', ['commit', '-m', '脚本提交2'])
   
   const log = spawn('git', ['log']) 
