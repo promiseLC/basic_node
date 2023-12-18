@@ -13,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "express": "^4.18.2"
+  },
+  "scripts": {
+    "githooks": "node ./gitHooks.js"
   }
 }

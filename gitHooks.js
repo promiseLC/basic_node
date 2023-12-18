@@ -11,12 +11,6 @@ const spawnProcessAddAndCommit = () => {
   const add = spawnSync('git', ['add', '.'])
   
   spawnSync('git', ['commit', '-m', msg||'noMsg'])
-  
-  const log = spawn('git', ['log']) 
-  
-  log.stdout.on('data', (data) => {
-    console.log(data.toString());
-  })
 
 }
 
