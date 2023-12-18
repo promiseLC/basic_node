@@ -29,10 +29,16 @@ const spawnProcessAddAndCommit = () => {
   const add = spawn('git', ['add', '.'])
   
   add.stdout.on('data', (data) => {
-   console.log('add',data);
+  console.log('add',data);
   })
 
-   spawn('git',['commit','-m','脚本提交'])
+  spawn('git', ['commit', '-m', '脚本提交1'])
+  
+  // const log = spawn('git', ['log']) 
+  
+  // log.stdout.on('data', (data) => {
+  //   console.log(data.toString());
+  // })
 
 }
 
