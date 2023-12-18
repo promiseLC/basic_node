@@ -2,7 +2,7 @@
 import childProcess from 'child_process';
 
 
-const { spawnSync } = childProcess;
+const {spawn, spawnSync } = childProcess;
 
 const msg = process.argv[2];
 
