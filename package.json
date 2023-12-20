@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "node ./debug.js",
-    "start": "node ./1.node_basic.js",
-    "githooks": "node ./hooks/git-hooks.js"
+    "start": "node ./sync_async_promises.js",
+    "add-commit": "node ./hooks/git-add-commit-hooks.js",
+    "log": "node ./hooks/git-log-hooks.js"
   },
   "keywords": [],
   "author": "",
