@@ -1,0 +1,19 @@
+{
+  "name": "bin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "hello-node": "dist/bin.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/bin.ts --target es6 --format cjs,esm --dts",
+    "dev": "tsup src/index.ts src/bin.ts --target es6 --format cjs,esm --dts --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  }
+}

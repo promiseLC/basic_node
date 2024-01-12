@@ -1,54 +1,20 @@
-import express from 'express';
-import method from './routes/method.js'
-import user from './routes/router-demo.js'
-import response from './routes/response.js';
+// app.js
+import express from 'express'
+import mountMiddleware from './mountMiddleware/index.js'
+import mountRouters from './routes/index.js'
 
 
-const PORT = 3029;
-
-const app = express();
 
 
-app.use(express.json())
+const PORT = 3029 // 用于设置端口号
+const app = express() // 创建一个express应用程序实例
 
-app.use((req, res, next) => {
-  const { method, path,query,body,headers } = req
-  next()
-})
+mountMiddleware(app)
 
+mountRouters(app)
 
-app.get('/hello/:id', (req,res) => {
-  const { params } = req;
-
-  res.json(params)
-})
-
-app.use(user)
-
-// 模块 会把 /action 拼接到 user模块路由之前
-app.use('/action',user)
-
-
-method(app)
-
-
-app.use(response);
-
-
-// app route 一个路由处理多个不同方式请求
-app.route('/auth').all((req,res,next) => {
-  
-  console.log(`pre all`, req, res);
-  
-  next();
-
-}).get((req, res) => {
-  res.send('auth get')
-}).post((req,res) => {
-    res.send('auth post')
-})
-
-
+// 启动 Express 应用程序，监听在指定的端口上
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  // 在控制台输出服务器运行信息
+  console.log(`Server is running at http://localhost:${PORT}`)
 })
